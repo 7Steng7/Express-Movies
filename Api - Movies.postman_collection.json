@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "60ce1391-f4d7-46a3-b9c6-8c0d9db24a5b",
+		"name": "Api - Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43051531"
+	},
+	"item": [
+		{
+			"name": "listUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "listAllMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "exampleQueryMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies?title=El&category=Drama&page=1&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "El"
+						},
+						{
+							"key": "category",
+							"value": "Drama"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newsMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/movies/news"
+			},
+			"response": []
+		},
+		{
+			"name": "listCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Agregado por post\",\r\n    \"email\" : \"testPOST@example.com\",\r\n    \"password\" : \"passwordPOST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"Pelicula por post\",\r\n    \"description\" : \"Esta pelicula se agregó por POST\",\r\n    \"datePremiere\" : \"2023-10-10\",\r\n    \"category_name\": \"Terror\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "userMovieSeen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/users/one@example.com"
+			},
+			"response": []
+		},
+		{
+			"name": "markMovieAsSeen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"one@example.com\",\r\n    \"title\": \"El Padrino\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/movies/mark-as-seen"
+			},
+			"response": []
+		},
+		{
+			"name": "seenTable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/seen"
+			},
+			"response": []
+		}
+	]
+}
