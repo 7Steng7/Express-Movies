@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2/promise'); // mysql2 con promesas
 
-const database = process.env.MYSQL_DATABASE || 'apiPeliculas';
-const username = process.env.MYSQL_USER || 'root';
-const password = process.env.MYSQL_PASSWORD || '666666';
-const host = process.env.MYSQL_HOST || 'localhost';
+const database = process.env.MYSQL_DATABASE;
+const username = process.env.MYSQL_USER;
+const password = process.env.MYSQL_PASSWORD;
+const host = process.env.MYSQL_HOST;
 
 const sequelize = new Sequelize(database, username, password, {
     host,

@@ -1,12 +1,7 @@
-// Copyright IBM Corp. 2018,2020. All Rights Reserved.
-// Node module: @loopback/example-todo
-// This file is licensed under the MIT License.
-// License text available at https://opensource.org/licenses/MIT
-//SQL connection
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { dbConnectMysql } = require("./config/mysql");
+const { dbConnectMysql } = require("./config/database");
 const app = express();
 
 app.use(cors());
