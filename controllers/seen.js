@@ -10,5 +10,4 @@ const getItems = async (req, res) => {
     }
 };
 
-
 module.exports = { getItems }

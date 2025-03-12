@@ -21,26 +21,4 @@ const createItem = async (req, res) => {
     }
 };
 
-const updateItem = async (req, res) => {
-  
-};
-const patchItem = async (req, res) => {
-   
-};
-
-
-const patchOrganization = async (req, res) => {
-
-};
-
-    const login = async (req, res) =>{
-
-    };
-
-const deleteItem = async (req, res) => {
-
-};
-
-
-module.exports = {
-    getItems, createItem, updateItem, deleteItem, login, patchItem, patchOrganization }
+module.exports = { getItems, createItem }

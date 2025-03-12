@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-
-const { validatorCreateUser, validatorGetUser, validatorLogin, validatorUpdateUser, validatorPatch } = require('../validators/usersValidators');
+const { validatorCreateCategory } = require('../validators/categoriesValidators');
 const { getItems, createItem } = require('../controllers/categories');
 
 router.get("/", getItems);
-
-router.post("/", createItem);
+router.post("/", validatorCreateCategory, createItem);
 
 module.exports = router;

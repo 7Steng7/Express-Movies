@@ -1,54 +1,21 @@
-// const { check } = require('express-validator');
-// const validateResults = require('../utils/handleValidator');
+const { body, param } = require('express-validator');
 
-// const validatorCreateUser = [
-//     check("usu_documento").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ];
+const validatorCreateUser = [
+    body('name')
+        .notEmpty().withMessage('El nombre es obligatorio')
+        .isString().withMessage('El nombre debe ser un texto'),
+    body('email')
+        .notEmpty().withMessage('El email es obligatorio')
+        .isEmail().withMessage('El email debe ser válido'),
+    body('password')
+        .notEmpty().withMessage('La contraseña es obligatoria')
+        .isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres')
+];
 
-// const validatorLogin = [
-//     check("usu_documento").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ];
+const validatorGetUser = [
+    param('email')
+        .notEmpty().withMessage('El email es obligatorio')
+        .isEmail().withMessage('El email debe ser válido')
+];
 
-// const validatorPatch = [
-//     check("usu_documento").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ];
-
-// const validatorGetUsersByCompany = [
-//     check("organizationId").optional().isString(),
-//     (req, res, next) => {
-//         return validateResults(req, res, next);
-//     }
-// ];
-
-
-// const validatorGetUser = [
-//     check("usu_documento").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ];
-
-// const validatorUpdateUser = [
-//     check("usu_documento").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ]
-
-// const validatorOrganizationId = [
-//     check("organizationId").exists().notEmpty(),
-//     (req, res, next) =>{
-//         return validateResults(req, res, next);
-//     }
-// ];
-
-// module.exports = { validatorCreateUser, validatorGetUser,validatorGetUsersByCompany, validatorLogin, validatorUpdateUser, validatorPatch,validatorOrganizationId };
+module.exports = { validatorCreateUser, validatorGetUser };

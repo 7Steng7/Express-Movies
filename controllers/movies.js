@@ -4,7 +4,8 @@ const { Op } = require('sequelize');
 
 const getItems = async (req, res) => {
     try {
-        const { title, category, page = 1, pageSize = 10 } = req.query;
+        const { title, category, pageSize = 10 } = req.query;
+        const page = parseInt(req.query.page) || 1;
         const filteredMovies = {
             include: [
                 {
@@ -117,7 +118,4 @@ const markMovieAsSeen = async (req, res) => {
     }
 };
 
-
-
-module.exports = {
-    getItems, createItem, getNews, markMovieAsSeen }
+module.exports = { getItems, createItem, getNews, markMovieAsSeen }
