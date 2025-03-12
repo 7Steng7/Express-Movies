@@ -17,9 +17,13 @@ const Seen = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        viewedAt: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
+        },
     }, {
         tableName: 'seen',
-        timestamps: true
+        timestamps: false
     }
 );
 

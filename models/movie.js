@@ -11,7 +11,8 @@ const Movie = sequelize.define(
         },
         title:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         description: {
             type: DataTypes.STRING,
@@ -22,7 +23,6 @@ const Movie = sequelize.define(
         category_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
     }, {
         tableName: 'movies',
