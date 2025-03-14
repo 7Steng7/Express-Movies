@@ -36,3 +36,13 @@ Este proyecto es una API Rest desarrollada en **Node.js** y **Express** que perm
 
 ### ✅ **Validación de Datos**
 - ![Express-validator](https://img.shields.io/badge/Express_validator-000000?style=for-the-badge&logo=express&logoColor=white) (para validar los datos de entrada en los endpoints)
+
+### 📄 **Modelado de Clases** (Modelo Relacional.png)
+Los modelos de la base de datos están definidos en Sequelize, incluyendo:
+- **Usuario**: `User` (nombre, email, contraseña).
+- **Película**: `Movie` (título, descripción, fecha de estreno, categoría).
+- **Categoría**: `Category` (nombre de la categoría, descripción).
+- **Vistas**: `Seen` (relación entre usuarios y películas vistas).
+
+### 🧪 **Pruebas en Postman**
+Se incluye un archivo JSON (`API_Peliculas.postman_collection.json`) con todas las rutas de la API y ejemplos de solicitudes/respuestas. Puedes importar este archivo en Postman para probar la API fácilmente.
